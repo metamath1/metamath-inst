@@ -1,0 +1,140 @@
+[
+  {
+    "type": "dist",
+    "feature": "metrology_cd_mean",
+    "group_by": null,
+    "score": 0.6465,
+    "stats": {
+      "bimodality": 0.9946
+    },
+    "rank": 1,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/01_metrology_cd_mean_by_dist.png"
+  },
+  {
+    "type": "violin",
+    "feature": "etch_chamber_temp_avg",
+    "group_by": "inspection_result",
+    "score": 0.6079,
+    "stats": {
+      "eta_squared": 0.3492,
+      "cohens_d_norm": 1.0,
+      "bimodality": 0.5039
+    },
+    "rank": 2,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/02_etch_chamber_temp_avg_by_inspection_result.png"
+  },
+  {
+    "type": "violin",
+    "feature": "litho_focus_offset",
+    "group_by": "inspection_result",
+    "score": 0.6023,
+    "stats": {
+      "eta_squared": 0.377,
+      "cohens_d_norm": 1.0,
+      "bimodality": 0.4131
+    },
+    "rank": 3,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/03_litho_focus_offset_by_inspection_result.png"
+  },
+  {
+    "type": "dist",
+    "feature": "deposition_thickness_var",
+    "group_by": null,
+    "score": 0.5975,
+    "stats": {
+      "bimodality": 0.9192
+    },
+    "rank": 4,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/04_deposition_thickness_var_by_dist.png"
+  },
+  {
+    "type": "dist",
+    "feature": "cmp_slurry_flow_rate",
+    "group_by": null,
+    "score": 0.5947,
+    "stats": {
+      "bimodality": 0.915
+    },
+    "rank": 5,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/05_cmp_slurry_flow_rate_by_dist.png"
+  },
+  {
+    "type": "dist",
+    "feature": "litho_overlay_x",
+    "group_by": null,
+    "score": 0.5854,
+    "stats": {
+      "bimodality": 0.9006
+    },
+    "rank": 6,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/06_litho_overlay_x_by_dist.png"
+  },
+  {
+    "type": "dist",
+    "feature": "deposition_uniformity_index",
+    "group_by": null,
+    "score": 0.5798,
+    "stats": {
+      "bimodality": 0.892
+    },
+    "rank": 7,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/07_deposition_uniformity_index_by_dist.png"
+  },
+  {
+    "type": "violin",
+    "feature": "metrology_cd_uniformity",
+    "group_by": "inspection_result",
+    "score": 0.5761,
+    "stats": {
+      "eta_squared": 0.3151,
+      "cohens_d_norm": 0.9522,
+      "bimodality": 0.5053
+    },
+    "rank": 8,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/08_metrology_cd_uniformity_by_inspection_result.png"
+  },
+  {
+    "type": "dist",
+    "feature": "cmp_polish_time",
+    "group_by": null,
+    "score": 0.5706,
+    "stats": {
+      "bimodality": 0.8779
+    },
+    "rank": 9,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/09_cmp_polish_time_by_dist.png"
+  },
+  {
+    "type": "dist",
+    "feature": "cmp_pad_temp",
+    "group_by": null,
+    "score": 0.5609,
+    "stats": {
+      "bimodality": 0.8629
+    },
+    "rank": 10,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/10_cmp_pad_temp_by_dist.png"
+  },
+  {
+    "type": "dist",
+    "feature": "deposition_gas_flow_avg",
+    "group_by": null,
+    "score": 0.5472,
+    "stats": {
+      "bimodality": 0.8419
+    },
+    "rank": 11,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/11_deposition_gas_flow_avg_by_dist.png"
+  },
+  {
+    "type": "dist",
+    "feature": "litho_exposure_time",
+    "group_by": null,
+    "score": 0.5469,
+    "stats": {
+      "bimodality": 0.8414
+    },
+    "rank": 12,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/12_litho_exposure_time_by_dist.png"
+  }
+]

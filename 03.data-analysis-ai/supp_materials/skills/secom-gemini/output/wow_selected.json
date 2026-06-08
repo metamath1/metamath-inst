@@ -1,0 +1,30 @@
+[
+  {
+    "rank": 1,
+    "png_path": "C:\\Users\\metam\\works\\dbhitek\\skills\\secom_gemini\\output\\wow_candidates\\02_etch_chamber_temp_avg_by_inspection_result.png",
+    "score": 0.6079,
+    "insight_title": "공정 온도와 불량의 명확한 상관성",
+    "expert_comment": "etch_chamber_temp_avg 값이 높을수록 불량(Fail) 발생 확률이 현저히 증가하는 패턴이 관찰됩니다. 정상 제품은 온도가 0도 근처에 집중된 반면, 불량 제품은 20도 이상의 높은 온도 대역에 분포하고 있어 공정 온도 제어가 품질의 핵심 변수임을 시사합니다."
+  },
+  {
+    "rank": 2,
+    "png_path": "C:\\Users\\metam\\works\\dbhitek\\skills\\secom_gemini\\output\\wow_candidates\\03_litho_focus_offset_by_inspection_result.png",
+    "score": 0.6023,
+    "insight_title": "리소 포커스 오프셋의 불량 임계치",
+    "expert_comment": "litho_focus_offset 분포가 Pass와 Fail 그룹 간에 뚜렷하게 분리되는 모습을 보입니다. 정상 제품은 주로 -0.010 미만에 분포하는 반면, 불량 제품은 -0.005 이상의 높은 영역에서 빈번하게 발생하고 있어 해당 오프셋 관리가 시급합니다."
+  },
+  {
+    "rank": 3,
+    "png_path": "C:\\Users\\metam\\works\\dbhitek\\skills\\secom_gemini\\output\\wow_candidates\\08_metrology_cd_uniformity_by_inspection_result.png",
+    "score": 0.5761,
+    "insight_title": "품질 균일성 저하가 불량으로 직결",
+    "expert_comment": "metrology_cd_uniformity 값이 커질수록(불균일할수록) 불량 판정 비율이 높아지는 경향이 뚜렷합니다. 불량 그룹의 중앙값이 정상 그룹의 최대값 수준과 유사할 정도로 큰 차이를 보이고 있어, 품질 균일도 지표를 실시간 모니터링 변수로 활용할 가치가 매우 높습니다."
+  },
+  {
+    "rank": 4,
+    "png_path": "C:\\Users\\metam\\works\\dbhitek\\skills\\secom_gemini\\output\\wow_candidates\\01_metrology_cd_mean_by_dist.png",
+    "score": 0.6465,
+    "insight_title": "측정 데이터의 극단적 이상치 존재",
+    "expert_comment": "metrology_cd_mean 변수에서 대다수의 데이터와 동떨어진 1000 근처의 극단적 이상치가 관찰됩니다. 이러한 데이터는 센서 오작동일 가능성이 높으며, 모델 학습 전 반드시 필터링하거나 클리핑 처리를 수행해야 모델의 왜곡을 방지할 수 있습니다."
+  }
+]

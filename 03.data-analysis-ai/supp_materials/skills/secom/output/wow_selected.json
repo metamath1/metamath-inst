@@ -1,0 +1,37 @@
+[
+  {
+    "rank": 1,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/02_etch_chamber_temp_avg_by_inspection_result.png",
+    "score": 0.6079,
+    "insight_title": "식각 온도가 Fail을 가른다",
+    "expert_comment": "Pass 웨이퍼의 식각 챔버 평균 온도(etch_chamber_temp_avg)는 0 부근에 밀집된 반면, Fail 웨이퍼는 15~25 범위에 넓게 분포하며 중앙값 기준 약 15 이상 높습니다. η²=0.35로 이 피처 하나가 Fail/Pass 분산의 35%를 설명하는 강력한 예측 변수입니다. 특정 온도 임계값 이상에서 불량률이 급격히 높아지는 패턴으로, 공정 관리 기준(Control Limit) 설정에 직접 활용 가능합니다."
+  },
+  {
+    "rank": 2,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/03_litho_focus_offset_by_inspection_result.png",
+    "score": 0.6023,
+    "insight_title": "포커스 오프셋의 방향이 합격을 결정",
+    "expert_comment": "리소그래피 포커스 오프셋(litho_focus_offset)이 Pass 군은 -0.010 부근, Fail 군은 -0.005 부근으로 분포 중심이 명확히 다릅니다. η²=0.377로 전체 피처 중 타겟 분리력이 가장 높은 변수입니다. 포커스가 기준보다 덜 음수 방향(-0.005 이상)으로 이동할 때 불량이 집중되는 패턴으로, 실시간 포커스 교정 알람 트리거 기준으로 바로 적용 가능합니다."
+  },
+  {
+    "rank": 3,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/08_metrology_cd_uniformity_by_inspection_result.png",
+    "score": 0.5761,
+    "insight_title": "CD 균일도 2배 차이가 불량을 예고",
+    "expert_comment": "Critical Dimension 균일도(metrology_cd_uniformity)의 중앙값이 Pass에서 약 0.020, Fail에서 약 0.043으로 2배 이상 차이납니다. Fail 군에서 0.24까지 치솟는 극단값도 관찰되어 불균일 공정이 간헐적으로 심각하게 발생하고 있음을 시사합니다. CD 균일도는 반도체 수율의 핵심 지표이므로, 이 값이 0.06을 넘는 웨이퍼는 불량 고위험군으로 선제 격리하는 규칙 기반 필터 도입을 고려할 수 있습니다."
+  },
+  {
+    "rank": 4,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/01_metrology_cd_mean_by_dist.png",
+    "score": 0.6465,
+    "insight_title": "CD 평균값에 숨겨진 센서 포화 문제",
+    "expert_comment": "metrology_cd_mean의 분포는 대부분 0~50 범위에 밀집되어 있으나 1000에 집중된 극단값 그룹이 명확히 존재합니다(QQ Plot R=0.237, 정규성 매우 낮음). 이 1000 값들은 실제 측정치가 아니라 센서 상한(saturation) 또는 측정 불가 시 자동 기록되는 코드값일 가능성이 높습니다. 모델링 전 이 값들을 결측 처리하거나 별도의 이진 파생 피처(cd_mean_saturated)로 변환하면 노이즈를 줄이고 예측 성능을 개선할 수 있습니다."
+  },
+  {
+    "rank": 5,
+    "png_path": "/sessions/loving-gifted-shannon/mnt/secom/output/wow_candidates/05_cmp_slurry_flow_rate_by_dist.png",
+    "score": 0.5947,
+    "insight_title": "슬러리 유량 데이터, 두 개의 세계",
+    "expert_comment": "cmp_slurry_flow_rate는 0~20 범위의 정상 측정값 그룹과 200~400에 몰린 두 번째 그룹으로 극단적인 이중 분포(bimodality=0.915)를 보입니다. 400 상한에 집중된 값들은 앞서 본 cmp_pad_temp, litho_overlay_x 등과 동일한 센서 포화 패턴이며, 이들 변수는 상관관계 r=0.97로 묶여 있어 동일 공정 이벤트(CMP 비정상 가동)를 나타내는 것으로 추정됩니다. 이 그룹을 별도 범주로 인코딩하면 트리 모델이 CMP 비정상 이벤트와 불량 간의 관계를 더 명확히 학습할 수 있습니다."
+  }
+]

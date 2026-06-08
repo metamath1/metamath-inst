@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다이캐스팅 품질 분석 마스터 리포트</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @media print {
+            .no-print { display: none; }
+            body { background: white; }
+            .a4-page { width: 210mm; height: 297mm; padding: 20mm; margin: 0; box-shadow: none; }
+        }
+        body { background-color: #f3f4f6; font-family: 'Pretendard', sans-serif; }
+        .a4-page { width: 210mm; height: 297mm; background: white; margin: 20px auto; padding: 15mm; box-shadow: 0 0 10px rgba(0,0,0,0.1); overflow: hidden; }
+        .chart-container { position: relative; height: 200px; width: 100%; }
+    </style>
+</head>
+<body class="p-4">
+    <div class="no-print mb-4 text-center">
+        <button onclick="window.print()" class="bg-teal-600 text-white px-6 py-2 rounded-lg shadow hover:bg-teal-700 transition">PDF로 인쇄하기</button>
+    </div>
+
+    <div class="a4-page border-t-8 border-teal-600">
+        <!-- Header -->
+        <div class="flex justify-between items-start mb-6">
+            <div>
+                <h1 class="text-3xl font-bold text-gray-800">다이캐스팅 품질 최적화 분석 보고서</h1>
+                <p class="text-gray-500 mt-1">공정 데이터 기반 불량 예측 및 핵심 인자(CTQ) 규명</p>
+            </div>
+            <div class="text-right text-sm text-gray-600">
+                <p>발행일: 2026. 05. 05</p>
+                <p>분석자: Data Analysis Master Mentor</p>
+            </div>
+        </div>
+
+        <!-- KPI Section -->
+        <div class="grid grid-cols-4 gap-4 mb-8">
+            <div class="bg-gray-50 p-4 rounded-lg border">
+                <p class="text-xs text-gray-500">데이터 신뢰도</p>
+                <p class="text-2xl font-bold text-teal-600">92.0%</p>
+                <p class="text-[10px] text-gray-400">결측 정제 후 유효 데이터</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg border">
+                <p class="text-xs text-gray-500">핵심 지표 이탈</p>
+                <p class="text-2xl font-bold text-red-500">-42.2%</p>
+                <p class="text-[10px] text-gray-400">High_Velocity 평균 편차</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg border">
+                <p class="text-xs text-gray-500">AI 예측 정밀도</p>
+                <p class="text-2xl font-bold text-teal-600">100%</p>
+                <p class="text-[10px] text-gray-400">불량 알람 시 실제 적중률</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg border">
+                <p class="text-xs text-gray-500">불량 미검출 방지</p>
+                <p class="text-2xl font-bold text-orange-500">67.0%</p>
+                <p class="text-[10px] text-gray-400">XGBoost 기반 최대 재현율</p>
+            </div>
+        </div>
+
+        <!-- Main Insights -->
+        <div class="grid grid-cols-2 gap-8 mb-8">
+            <div>
+                <h3 class="text-lg font-bold mb-3 flex items-center">
+                    <span class="w-1.5 h-6 bg-teal-500 mr-2"></span> 핵심 발견사항 (Critical Findings)
+                </h3>
+                <ul class="space-y-3 text-sm text-gray-700">
+                    <li>
+                        <strong>1. 사출 속도(High_Velocity) 임계값 붕괴:</strong> 
+                        정상 사출은 평균 2.32m/s를 유지하나, 불량 시 1.34m/s로 급락. 이는 용탕의 충전 불량을 유발하는 결정적 원인임.
+                    </li>
+                    <li>
+                        <strong>2. 비스킷 두께(Biscuit_Thickness) 상관성:</strong>
+                        비스킷이 두꺼워질수록 사출 압력이 말단까지 전달되지 못해 품질 저하가 발생함 (중요도 2위).
+                    </li>
+                    <li>
+                        <strong>3. 사이클 타임(Cycle_Time)의 기계적 지연:</strong>
+                        불량 시 사이클 타임이 9배 이상 급증. 설비의 유압 계통 또는 센서 통신 장애가 품질과 동반 하락함.
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold mb-3 flex items-center">
+                    <span class="w-1.5 h-6 bg-teal-500 mr-2"></span> 변수별 중요도 (Feature Importance)
+                </h3>
+                <div class="chart-container">
+                    <canvas id="importanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Model Comparison & Confusion Matrix -->
+        <div class="grid grid-cols-2 gap-8 mb-8">
+            <div class="bg-gray-50 p-4 rounded-lg">
+                <h3 class="text-sm font-bold mb-3 text-gray-600">AI 모델 성능 비교 (PR-AUC)</h3>
+                <table class="w-full text-xs text-left">
+                    <thead class="border-b">
+                        <tr>
+                            <th class="py-2">모델명</th>
+                            <th>Precision</th>
+                            <th>Recall</th>
+                            <th>PR-AUC</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b bg-white">
+                            <td class="py-2 font-bold text-teal-600">Random Forest</td>
+                            <td>1.00</td>
+                            <td>0.62</td>
+                            <td>0.8761</td>
+                        </tr>
+                        <tr class="bg-white">
+                            <td class="py-2">XGBoost</td>
+                            <td>0.74</td>
+                            <td>0.67</td>
+                            <td>0.7848</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="text-[10px] text-gray-400 mt-2">* 2.3%의 희소 불량 탐지에 최적화된 Random Forest 채택 권고</p>
+            </div>
+            <div class="flex flex-col items-center">
+                <h3 class="text-sm font-bold mb-3 text-gray-600">XGBoost 혼동 행렬 (Confusion Matrix)</h3>
+                <div class="grid grid-cols-2 gap-1 text-center text-[10px] w-40">
+                    <div class="bg-teal-100 p-2 border">919<br>(정상-정상)</div>
+                    <div class="bg-red-50 p-2 border">5<br>(오보)</div>
+                    <div class="bg-orange-50 p-2 border">7<br>(미검출)</div>
+                    <div class="bg-teal-500 text-white p-2 border font-bold">14<br>(불량-탐지)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Plan -->
+        <div class="border-t pt-6">
+            <h3 class="text-lg font-bold mb-4 text-gray-800 uppercase tracking-wider">비즈니스 실행 방안 (Action Plan)</h3>
+            <div class="grid grid-cols-3 gap-4 text-xs">
+                <div class="p-3 border-l-4 border-teal-500 bg-gray-50">
+                    <h4 class="font-bold mb-1">1. Edge 가중치 배포</h4>
+                    <p class="text-gray-600">Random Forest 모델의 100% 정밀도를 활용하여 현장 오보율 0% 달성. 즉시 자동 선별기 연동.</p>
+                </div>
+                <div class="p-3 border-l-4 border-teal-500 bg-gray-50">
+                    <h4 class="font-bold mb-1">2. 임계치 하한 설정</h4>
+                    <p class="text-gray-600">High_Velocity 하한값을 1.50m/s로 설정하여 AI 탐지 전 물리적 사전 알람 체계 구축.</p>
+                </div>
+                <div class="p-3 border-l-4 border-teal-500 bg-gray-50">
+                    <h4 class="font-bold mb-1">3. 예지 보전 시행</h4>
+                    <p class="text-gray-600">Cycle_Time 변동성이 커지는 Shot 구간 발생 시 금형 및 유압 펌프 정밀 진단 프로세스 도입.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('importanceChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['High_Velocity', 'Biscuit_Thickness', 'Casting_Pressure', 'Cycle_Time', 'Clamping_Force'],
+                datasets: [{
+                    label: '중요도 가중치',
+                    data: [0.19, 0.16, 0.13, 0.13, 0.08],
+                    backgroundColor: 'rgba(20, 184, 166, 0.8)',
+                    borderColor: 'rgb(20, 184, 166)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                plugins: { legend: { display: false } },
+                scales: { x: { beginAtZero: true, ticks: { display: false }, grid: { display: false } } }
+            }
+        });
+    </script>
+</body>
+</html>

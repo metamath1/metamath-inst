@@ -1,0 +1,438 @@
+{
+  "dataset": {
+    "rows": 582,
+    "cols": 31,
+    "target_col": "inspection_result",
+    "numeric_features": 30,
+    "categorical_features": 1,
+    "total_missing": 1313,
+    "duplicates": 0
+  },
+  "missing": {
+    "etch_chamber_temp_avg": 5.84,
+    "cmp_endpoint_thickness": 8.08,
+    "thermal_anneal_temp_max": 8.42,
+    "etch_endpoint_signal": 8.59,
+    "wafer_edge_exclusion": 9.79,
+    "etch_pressure_peak": 6.87,
+    "cmp_pad_temp": 5.5,
+    "deposition_uniformity_index": 6.87,
+    "deposition_thickness_var": 9.45,
+    "cleaning_dhf_concentration": 8.76,
+    "deposition_rate_mean": 6.01,
+    "implant_dose_total": 7.56,
+    "litho_overlay_y": 9.28,
+    "etch_chamber_temp_std": 7.04,
+    "deposition_gas_flow_avg": 9.62,
+    "litho_overlay_x": 7.9,
+    "metrology_cd_mean": 9.45,
+    "cmp_slurry_flow_rate": 5.67,
+    "implant_beam_current": 5.84,
+    "metrology_cd_uniformity": 7.39,
+    "etch_rf_power_mean": 7.04,
+    "cmp_polish_time": 8.93,
+    "litho_exposure_time": 7.56,
+    "deposition_chamber_pressure": 7.04,
+    "litho_dose_avg": 5.33,
+    "implant_tilt_angle": 9.79,
+    "implant_energy_mean": 6.87,
+    "cmp_pressure_avg": 7.04,
+    "particle_count_post": 6.7,
+    "litho_focus_offset": 5.33
+  },
+  "numeric_stats": {
+    "etch_chamber_temp_avg": {
+      "mean": 5.0661,
+      "std": 10.5237,
+      "min": -28.9882,
+      "max": 66.4977,
+      "skewness": 1.4258,
+      "kurtosis": 2.9865,
+      "outlier_count": 55,
+      "outlier_pct": 10.04,
+      "missing_pct": 5.84
+    },
+    "cmp_endpoint_thickness": {
+      "mean": 20.609,
+      "std": 5.4597,
+      "min": 6.4482,
+      "max": 48.9882,
+      "skewness": 1.1964,
+      "kurtosis": 3.3079,
+      "outlier_count": 18,
+      "outlier_pct": 3.36,
+      "missing_pct": 8.08
+    },
+    "thermal_anneal_temp_max": {
+      "mean": 12.3111,
+      "std": 5.2943,
+      "min": 4.4981,
+      "max": 65.1651,
+      "skewness": 2.9672,
+      "kurtosis": 21.1529,
+      "outlier_count": 16,
+      "outlier_pct": 3.0,
+      "missing_pct": 8.42
+    },
+    "etch_endpoint_signal": {
+      "mean": 69.0917,
+      "std": 3.3304,
+      "min": 59.4,
+      "max": 77.2222,
+      "skewness": -0.092,
+      "kurtosis": -0.0442,
+      "outlier_count": 7,
+      "outlier_pct": 1.32,
+      "missing_pct": 8.59
+    },
+    "wafer_edge_exclusion": {
+      "mean": 253.3015,
+      "std": 320.9182,
+      "min": 0.0,
+      "max": 996.7213,
+      "skewness": 0.8043,
+      "kurtosis": -0.8393,
+      "outlier_count": 0,
+      "outlier_pct": 0.0,
+      "missing_pct": 9.79
+    },
+    "etch_pressure_peak": {
+      "mean": -5598.4151,
+      "std": 705.4539,
+      "min": -7150.25,
+      "max": 0.0,
+      "skewness": 2.8927,
+      "kurtosis": 17.1688,
+      "outlier_count": 13,
+      "outlier_pct": 2.4,
+      "missing_pct": 6.87
+    },
+    "cmp_pad_temp": {
+      "mean": 19.3989,
+      "std": 41.5359,
+      "min": 0.0,
+      "max": 400.0,
+      "skewness": 7.0034,
+      "kurtosis": 54.7814,
+      "outlier_count": 41,
+      "outlier_pct": 7.45,
+      "missing_pct": 5.5
+    },
+    "deposition_uniformity_index": {
+      "mean": 0.0661,
+      "std": 0.0687,
+      "min": 0.0,
+      "max": 0.5255,
+      "skewness": 5.359,
+      "kurtosis": 30.1892,
+      "outlier_count": 20,
+      "outlier_pct": 3.69,
+      "missing_pct": 6.87
+    },
+    "deposition_thickness_var": {
+      "mean": 8.9782,
+      "std": 1.4597,
+      "min": 8.0787,
+      "max": 23.3453,
+      "skewness": 8.8483,
+      "kurtosis": 82.9298,
+      "outlier_count": 17,
+      "outlier_pct": 3.23,
+      "missing_pct": 9.45
+    },
+    "cleaning_dhf_concentration": {
+      "mean": 3.9393,
+      "std": 1.2518,
+      "min": 0.7217,
+      "max": 8.237,
+      "skewness": 0.2801,
+      "kurtosis": 0.1949,
+      "outlier_count": 7,
+      "outlier_pct": 1.32,
+      "missing_pct": 8.76
+    },
+    "deposition_rate_mean": {
+      "mean": 0.7451,
+      "std": 0.0787,
+      "min": 0.5013,
+      "max": 0.8884,
+      "skewness": -0.5931,
+      "kurtosis": -0.092,
+      "outlier_count": 2,
+      "outlier_pct": 0.37,
+      "missing_pct": 6.01
+    },
+    "implant_dose_total": {
+      "mean": 15.8,
+      "std": 0.0969,
+      "min": 15.46,
+      "max": 16.07,
+      "skewness": -0.0494,
+      "kurtosis": 0.5129,
+      "outlier_count": 5,
+      "outlier_pct": 0.93,
+      "missing_pct": 7.56
+    },
+    "litho_overlay_y": {
+      "mean": 9.6361,
+      "std": 11.4532,
+      "min": 0.0,
+      "max": 108.754,
+      "skewness": 4.2567,
+      "kurtosis": 24.238,
+      "outlier_count": 70,
+      "outlier_pct": 13.26,
+      "missing_pct": 9.28
+    },
+    "etch_chamber_temp_std": {
+      "mean": 56.4747,
+      "std": 34.1236,
+      "min": 14.1113,
+      "max": 253.7931,
+      "skewness": 2.6099,
+      "kurtosis": 9.1962,
+      "outlier_count": 30,
+      "outlier_pct": 5.55,
+      "missing_pct": 7.04
+    },
+    "deposition_gas_flow_avg": {
+      "mean": 24.4646,
+      "std": 42.7569,
+      "min": 1.2391,
+      "max": 400.0,
+      "skewness": 6.4953,
+      "kurtosis": 48.0965,
+      "outlier_count": 28,
+      "outlier_pct": 5.32,
+      "missing_pct": 9.62
+    },
+    "litho_overlay_x": {
+      "mean": 16.1783,
+      "std": 40.4576,
+      "min": 0.0,
+      "max": 400.0,
+      "skewness": 7.6934,
+      "kurtosis": 63.5718,
+      "outlier_count": 18,
+      "outlier_pct": 3.36,
+      "missing_pct": 7.9
+    },
+    "metrology_cd_mean": {
+      "mean": 7.4154,
+      "std": 84.9438,
+      "min": 0.0,
+      "max": 1000.0,
+      "skewness": 11.3752,
+      "kurtosis": 127.5949,
+      "outlier_count": 4,
+      "outlier_pct": 0.76,
+      "missing_pct": 9.45
+    },
+    "cmp_slurry_flow_rate": {
+      "mean": 8.3484,
+      "std": 39.7785,
+      "min": 0.0,
+      "max": 400.0,
+      "skewness": 8.2101,
+      "kurtosis": 71.4827,
+      "outlier_count": 24,
+      "outlier_pct": 4.37,
+      "missing_pct": 5.67
+    },
+    "implant_beam_current": {
+      "mean": 9.3235,
+      "std": 9.3854,
+      "min": 2.68,
+      "max": 150.87,
+      "skewness": 10.7072,
+      "kurtosis": 138.142,
+      "outlier_count": 28,
+      "outlier_pct": 5.11,
+      "missing_pct": 5.84
+    },
+    "metrology_cd_uniformity": {
+      "mean": 0.0276,
+      "std": 0.0152,
+      "min": 0.0106,
+      "max": 0.239,
+      "skewness": 6.0817,
+      "kurtosis": 71.8863,
+      "outlier_count": 27,
+      "outlier_pct": 5.01,
+      "missing_pct": 7.39
+    },
+    "etch_rf_power_mean": {
+      "mean": -0.437,
+      "std": 1.1238,
+      "min": -3.779,
+      "max": 2.458,
+      "skewness": -1.1501,
+      "kurtosis": 1.4432,
+      "outlier_count": 80,
+      "outlier_pct": 14.79,
+      "missing_pct": 7.04
+    },
+    "cmp_polish_time": {
+      "mean": 9.0348,
+      "std": 32.9307,
+      "min": 0.0,
+      "max": 400.0,
+      "skewness": 8.8203,
+      "kurtosis": 86.4172,
+      "outlier_count": 22,
+      "outlier_pct": 4.15,
+      "missing_pct": 8.93
+    },
+    "litho_exposure_time": {
+      "mean": 0.1421,
+      "std": 0.122,
+      "min": 0.0,
+      "max": 0.95,
+      "skewness": 5.2249,
+      "kurtosis": 30.5005,
+      "outlier_count": 19,
+      "outlier_pct": 3.53,
+      "missing_pct": 7.56
+    },
+    "deposition_chamber_pressure": {
+      "mean": 0.0879,
+      "std": 0.0379,
+      "min": 0.0319,
+      "max": 0.4892,
+      "skewness": 3.8455,
+      "kurtosis": 29.5237,
+      "outlier_count": 24,
+      "outlier_pct": 4.44,
+      "missing_pct": 7.04
+    },
+    "litho_dose_avg": {
+      "mean": 0.044,
+      "std": 0.0514,
+      "min": 0.0,
+      "max": 0.4914,
+      "skewness": 4.2736,
+      "kurtosis": 24.1325,
+      "outlier_count": 83,
+      "outlier_pct": 15.06,
+      "missing_pct": 5.33
+    },
+    "implant_tilt_angle": {
+      "mean": 5.9422,
+      "std": 1.0301,
+      "min": 3.8922,
+      "max": 13.0958,
+      "skewness": 1.2019,
+      "kurtosis": 4.343,
+      "outlier_count": 19,
+      "outlier_pct": 3.62,
+      "missing_pct": 9.79
+    },
+    "implant_energy_mean": {
+      "mean": 1.1746,
+      "std": 0.2784,
+      "min": 0.3122,
+      "max": 2.211,
+      "skewness": 1.1832,
+      "kurtosis": 1.9727,
+      "outlier_count": 24,
+      "outlier_pct": 4.43,
+      "missing_pct": 6.87
+    },
+    "cmp_pressure_avg": {
+      "mean": 15.8013,
+      "std": 0.1113,
+      "min": 15.47,
+      "max": 16.09,
+      "skewness": 0.2117,
+      "kurtosis": -0.1076,
+      "outlier_count": 5,
+      "outlier_pct": 0.92,
+      "missing_pct": 7.04
+    },
+    "particle_count_post": {
+      "mean": 205.1169,
+      "std": 190.0921,
+      "min": 0.0,
+      "max": 989.4737,
+      "skewness": 1.716,
+      "kurtosis": 2.8346,
+      "outlier_count": 46,
+      "outlier_pct": 8.47,
+      "missing_pct": 6.7
+    },
+    "litho_focus_offset": {
+      "mean": -0.009,
+      "std": 0.0036,
+      "min": -0.017,
+      "max": 0.0106,
+      "skewness": 1.0017,
+      "kurtosis": 1.819,
+      "outlier_count": 6,
+      "outlier_pct": 1.09,
+      "missing_pct": 5.33
+    }
+  },
+  "correlations": {
+    "with_target": {},
+    "high_corr_pairs": [
+      {
+        "col1": "cmp_pad_temp",
+        "col2": "deposition_uniformity_index",
+        "r": 0.8547
+      },
+      {
+        "col1": "cmp_pad_temp",
+        "col2": "deposition_gas_flow_avg",
+        "r": 0.9221
+      },
+      {
+        "col1": "cmp_pad_temp",
+        "col2": "litho_overlay_x",
+        "r": 0.9642
+      },
+      {
+        "col1": "cmp_pad_temp",
+        "col2": "cmp_slurry_flow_rate",
+        "r": 0.9677
+      },
+      {
+        "col1": "cmp_pad_temp",
+        "col2": "cmp_polish_time",
+        "r": 0.953
+      },
+      {
+        "col1": "cmp_pad_temp",
+        "col2": "litho_exposure_time",
+        "r": 0.8289
+      },
+      {
+        "col1": "deposition_uniformity_index",
+        "col2": "deposition_gas_flow_avg",
+        "r": 0.8327
+      },
+      {
+        "col1": "deposition_uniformity_index",
+        "col2": "litho_overlay_x",
+        "r": 0.8849
+      },
+      {
+        "col1": "deposition_uniformity_index",
+        "col2": "cmp_slurry_flow_rate",
+        "r": 0.857
+      },
+      {
+        "col1": "deposition_uniformity_index",
+        "col2": "cmp_polish_time",
+        "r": 0.8676
+      }
+    ]
+  },
+  "target_distribution": {
+    "type": "classification",
+    "class_counts": {
+      "Pass": 499,
+      "Fail": 83
+    },
+    "imbalance_ratio": 6.01
+  }
+}
